@@ -5,20 +5,38 @@ import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Produtos from "./pages/Produtos";
 import Perfil from "./pages/Perfil";
+import { AutenticacaoProvider } from "./contexts/AutenticacaoContext";
+import RotaProtegida from "./routes/RotaProtegida";
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-gray-100">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/cadastro" element={<Cadastro />} />
-          <Route path="/produtos" element={<Produtos />} />
-          <Route path="/perfil" element={<Perfil />} />
-        </Routes>
-      </div>
-    </Router>
+    <AutenticacaoProvider>
+      <Router>
+        <div className="min-h-screen bg-gray-100">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/cadastro" element={<Cadastro />} />
+            <Route
+              path="/produtos"
+              element={
+                <RotaProtegida>
+                  <Produtos />
+                </RotaProtegida>
+              }
+            />
+            <Route
+              path="/perfil"
+              element={
+                <RotaProtegida>
+                  <Perfil />
+                </RotaProtegida>
+              }
+            />
+          </Routes>
+        </div>
+      </Router>
+    </AutenticacaoProvider>
   );
 }
 
