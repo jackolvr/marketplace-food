@@ -1,4 +1,12 @@
 {
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Usuário Teste",
+      "email": "teste@teste.com",
+      "senha": "123456"
+    }
+  ],
   "produtos": [
     {
       "id": 1,

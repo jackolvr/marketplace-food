@@ -1,14 +1,15 @@
 import React, { createContext, useState, useContext } from "react";
+import { autenticar } from "../controllers/usuarioController";
 
 const AutenticacaoContext = createContext();
 
 export function AutenticacaoProvider({ children }) {
   const [usuario, setUsuario] = useState(null);
 
-  function login(email, senha) {
-    // Simulação de login (substituir por chamada real depois)
-    if (email === "teste@teste.com" && senha === "123456") {
-      setUsuario({ nome: "Usuário Teste", email });
+  async function login(email, senha) {
+    const usuarioAutenticado = await autenticar(email, senha);
+    if (usuarioAutenticado) {
+      setUsuario(usuarioAutenticado);
       return true;
     }
     return false;

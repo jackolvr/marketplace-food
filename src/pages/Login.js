@@ -9,9 +9,9 @@ function Login() {
   const { login } = useAutenticacao();
   const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const sucesso = login(email, senha);
+    const sucesso = await login(email, senha);
     if (sucesso) {
       navigate("/produtos");
     } else {
