@@ -7,6 +7,8 @@ import Produtos from "./pages/Produtos";
 import Perfil from "./pages/Perfil";
 import DetalhesProduto from "./pages/DetalhesProduto";
 import Carrinho from "./pages/Carrinho";
+import CadastrarProduto from "./pages/CadastrarProduto";
+import EditarProduto from "./pages/EditarProduto";
 import { AutenticacaoProvider } from "./contexts/AutenticacaoContext";
 import { CarrinhoProvider } from "./contexts/CarrinhoContext";
 import RotaProtegida from "./routes/RotaProtegida";
@@ -50,6 +52,22 @@ function App() {
                 element={
                   <RotaProtegida>
                     <Carrinho />
+                  </RotaProtegida>
+                }
+              />
+              <Route
+                path="/cadastrar-produto"
+                element={
+                  <RotaProtegida>
+                    <CadastrarProduto />
+                  </RotaProtegida>
+                }
+              />
+              <Route
+                path="/editar-produto"
+                element={
+                  <RotaProtegida>
+                    <EditarProduto />
                   </RotaProtegida>
                 }
               />

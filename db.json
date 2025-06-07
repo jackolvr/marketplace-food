@@ -5,6 +5,12 @@
       "nome": "Usuário Teste",
       "email": "teste@teste.com",
       "senha": "123456"
+    },
+    {
+      "id": "d1ba",
+      "nome": "teste2",
+      "email": "teste2@teste.com",
+      "senha": "123456"
     }
   ],
   "produtos": [

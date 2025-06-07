@@ -10,7 +10,7 @@ function MenuNavegacao() {
 
   function handleLogout() {
     logout();
-    navigate("/login");
+    navigate("/"); // Agora redireciona para Home
   }
 
   return (

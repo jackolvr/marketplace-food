@@ -3,39 +3,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   fetchProdutos,
-  addProduto,
-  updateProduto,
   removeProduto,
 } from "../store/produtosSlice";
-import FormularioProduto from "../components/FormularioProduto";
 import MenuNavegacao from "../components/MenuNavegacao";
 
 function Produtos() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { lista, status, erro } = useSelector((state) => state.produtos);
-  const [produtoEditando, setProdutoEditando] = useState(null);
 
   useEffect(() => {
     dispatch(fetchProdutos());
   }, [dispatch]);
-
-  function handleSalvar(produto) {
-    if (produto.id) {
-      dispatch(updateProduto({ id: produto.id, produto }));
-      setProdutoEditando(null);
-    } else {
-      dispatch(addProduto(produto));
-    }
-  }
-
-  function handleEditar(produto) {
-    setProdutoEditando(produto);
-  }
-
-  function handleCancelarEdicao() {
-    setProdutoEditando(null);
-  }
 
   function handleExcluir(id) {
     if (window.confirm("Tem certeza que deseja excluir este produto?")) {
@@ -48,11 +27,12 @@ function Produtos() {
       <MenuNavegacao />
       <div className="flex flex-col items-center py-8">
         <h2 className="text-2xl font-semibold mb-4">Produtos</h2>
-        <FormularioProduto
-          onSalvar={handleSalvar}
-          produtoEditando={produtoEditando}
-          onCancelar={handleCancelarEdicao}
-        />
+        <button
+          onClick={() => navigate("/cadastrar-produto")}
+          className="mb-6 bg-green-600 text-white py-2 px-6 rounded hover:bg-green-700 font-semibold"
+        >
+          Cadastrar Produto
+        </button>
         {status === "loading" && <p>Carregando...</p>}
         {erro && <p className="text-red-500">{erro}</p>}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
@@ -77,7 +57,7 @@ function Produtos() {
                   Detalhes
                 </button>
                 <button
-                  onClick={() => handleEditar(produto)}
+                  onClick={() => navigate("/editar-produto", { state: { produto } })}
                   className="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600"
                 >
                   Editar
