@@ -1,20 +1,20 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { buscarProdutos, criarProduto, atualizarProduto, deletarProduto } from "../services/produtoService";
+import * as produtoController from "../controllers/produtoController";
 
 export const fetchProdutos = createAsyncThunk("produtos/fetchProdutos", async () => {
-  return await buscarProdutos();
+  return await produtoController.listarProdutos();
 });
 
 export const addProduto = createAsyncThunk("produtos/addProduto", async (produto) => {
-  return await criarProduto(produto);
+  return await produtoController.criarNovoProduto(produto);
 });
 
 export const updateProduto = createAsyncThunk("produtos/updateProduto", async ({ id, produto }) => {
-  return await atualizarProduto(id, produto);
+  return await produtoController.atualizarProdutoExistente(id, produto);
 });
 
 export const removeProduto = createAsyncThunk("produtos/removeProduto", async (id) => {
-  await deletarProduto(id);
+  await produtoController.removerProduto(id);
   return id;
 });
 
@@ -52,4 +52,4 @@ const produtosSlice = createSlice({
   },
 });
 
-export default produtosSlice.reducer;   
+export default produtosSlice.reducer;
