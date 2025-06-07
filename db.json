@@ -1,7 +1,7 @@
 {
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Usuário Teste",
       "email": "teste@teste.com",
       "senha": "123456"
@@ -9,14 +9,14 @@
   ],
   "produtos": [
     {
-      "id": 1,
       "nome": "Pizza Margherita",
       "preco": 39.9,
       "descricao": "Clássica pizza italiana com molho de tomate, mussarela e manjericão.",
-      "imagem": "https://images.unsplash.com/photo-1513104890138-7c749659a591"
+      "imagem": "https://images.unsplash.com/photo-1513104890138-7c749659a591",
+      "id": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Hambúrguer Artesanal",
       "preco": 29.9,
       "descricao": "Hambúrguer suculento com queijo, bacon e molho especial.",
