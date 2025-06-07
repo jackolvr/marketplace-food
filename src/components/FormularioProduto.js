@@ -80,7 +80,7 @@ function FormularioProduto({ onSalvar, produtoEditando, onCancelar }) {
         >
           {produtoEditando ? "Salvar" : "Adicionar"}
         </button>
-        {produtoEditando && (
+        {onCancelar && (
           <button
             type="button"
             onClick={onCancelar}
