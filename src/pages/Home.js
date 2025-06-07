@@ -8,7 +8,7 @@ function Home() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-green-100 via-green-50 to-white">
       <div className="bg-white bg-opacity-90 rounded-xl shadow-lg p-10 flex flex-col items-center">
         <h1 className="text-4xl font-extrabold text-green-700 mb-4 text-center drop-shadow">
-          Marketplace de Comida
+          Marketplace Food
         </h1>
         <p className="text-lg text-gray-700 mb-8 text-center max-w-md">
           Bem-vindo ao melhor marketplace de comida! Descubra, compre e aproveite os melhores pratos da sua região.

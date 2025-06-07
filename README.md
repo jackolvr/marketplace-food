@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Marketplace Food
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicação web de marketplace de comida desenvolvida em ReactJS, seguindo o padrão MVC, com autenticação, CRUD completo de produtos, rotas protegidas, estados globais via Context API, integração com API mock (json-server) e estilização com TailwindCSS.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- Cadastro e login de usuários
+- Autenticação e rotas seguras
+- CRUD completo de produtos (criar, listar, editar, excluir)
+- Página de detalhes do produto
+- Carrinho de compras com Context API
+- Troca de dados entre rotas via props
+- Estados globais com useContext (autenticação e carrinho)
+- Integração com API mock (json-server) usando axios
+- Estilização responsiva com TailwindCSS
 
-### `npm start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ReactJS
+- React Router DOM
+- Redux Toolkit
+- Context API
+- Axios
+- TailwindCSS
+- json-server
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Como rodar o projeto
 
-### `npm test`
+1. **Clone o repositório:**
+   ```bash
+   git clone <url-do-repositorio>
+   cd marketplace-comida
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+3. **Inicie a API mock (json-server):**
+   ```bash
+   npm run server
+   ```
+   O json-server irá rodar em [http://localhost:3001](http://localhost:3001).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Inicie o frontend React:**
+   ```bash
+   npm start
+   ```
+   O app estará disponível em [http://localhost:3000](http://localhost:3000).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Estrutura de Pastas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src/
+  components/
+  controllers/
+  contexts/
+  models/
+  pages/
+  routes/
+  services/
+  store/
+  App.js
+  index.js
+  index.css
+db.json
+```
 
-### `npm run eject`
+## Usuário de Teste
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Você pode usar o seguinte usuário para login:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **E-mail:** teste@teste.com
+- **Senha:** 123456
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ou cadastre um novo usuário pela tela de cadastro.
