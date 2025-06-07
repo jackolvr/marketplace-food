@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   fetchProdutos,
   addProduto,
@@ -8,8 +9,10 @@ import {
 } from "../store/produtosSlice";
 import FormularioProduto from "../components/FormularioProduto";
 
+
 function Produtos() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { lista, status, erro } = useSelector((state) => state.produtos);
   const [produtoEditando, setProdutoEditando] = useState(null);
 
@@ -65,6 +68,12 @@ function Produtos() {
             <p className="text-green-600 font-semibold">R$ {produto.preco}</p>
             <p className="text-gray-600 text-sm mb-2">{produto.descricao}</p>
             <div className="flex gap-2">
+              <button
+                onClick={() => navigate("/detalhes-produto", { state: { produto } })}
+                className="bg-purple-500 text-white py-1 px-3 rounded hover:bg-purple-600"
+              >
+                Detalhes
+              </button>
               <button
                 onClick={() => handleEditar(produto)}
                 className="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600"
